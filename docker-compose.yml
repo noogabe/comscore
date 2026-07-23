@@ -1,0 +1,10 @@
+services:
+  comscore:
+    build: .
+    container_name: comscore-report
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./files:/app/files

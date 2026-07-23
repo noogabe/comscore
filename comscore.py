@@ -413,6 +413,8 @@ class Comscore:
         if "error" in periods:
             print(periods)
             return None
+        
+        print(f"{len(periods)} meses encontrados.")
 
         for period_id, period_name in periods.items():
 
@@ -441,7 +443,8 @@ class Comscore:
             if "error" in response:
                 print(response)
                 return None
-
+            
+            print("Montando arquivo CSV...")
             dataframe = self.build_dataframe(response)
 
             if dataframe.empty:
